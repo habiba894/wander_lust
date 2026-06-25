@@ -1,1 +1,0 @@
-import{t as e}from"./react-PctZdFmO.js";var t={hotels:[],places:[],images:[],details:{},restaurants:[]},n=e(e=>({countryDetails:null,setCountryDetails:t=>e({countryDetails:t}),clearCountryDetails:()=>e({countryDetails:t})}));export{n as t};
