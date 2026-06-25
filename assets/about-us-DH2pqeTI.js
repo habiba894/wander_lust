@@ -1,0 +1,1 @@
+var e=`/wander_lust/assets/about-us-CHzxV2Pt.png`;export{e as t};

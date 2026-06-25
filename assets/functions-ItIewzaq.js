@@ -1,0 +1,1 @@
+var e=e=>`/wander_lust/${e.replace(/^\/+/,``)}`;export{e as t};
