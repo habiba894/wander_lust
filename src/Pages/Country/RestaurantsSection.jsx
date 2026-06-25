@@ -1,4 +1,5 @@
 import useFavoriteStore from "../../stores/favoriteStore";
+import { getImageUrl } from "../../utils/functions";
 
 const defaultRestaurantImage = "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&auto=format&fit=crop";
 
@@ -64,7 +65,7 @@ const RestaurantsSection = ({ restaurants, countryName, loading }) => {
                 <div className="relative h-48 overflow-hidden shrink-0">
                   <img
                     loading="lazy"
-                    src={`/${r.image}`}
+                    src={getImageUrl(r.image)}
                     alt={r.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                     onError={(e) => { e.target.onerror = null; e.target.src = defaultRestaurantImage; }}

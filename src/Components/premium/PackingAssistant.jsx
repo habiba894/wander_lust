@@ -1,4 +1,4 @@
-// src/components/premium/PackingAssistant.jsx
+// src/Components/premium/PackingAssistant.jsx
 import { useState } from "react";
 import { FaCheckCircle, FaLightbulb, FaSuitcaseRolling } from "react-icons/fa";
 import { COUNTRIES, generatePackingList } from "../../utils/premiumData";

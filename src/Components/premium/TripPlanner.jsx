@@ -1,4 +1,4 @@
-// src/components/premium/TripPlanner.jsx
+// src/Components/premium/TripPlanner.jsx
 import { useState } from "react";
 import { FaArrowRight, FaCheckCircle, FaMapMarkedAlt, FaMapMarkerAlt } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";

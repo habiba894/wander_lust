@@ -1,6 +1,7 @@
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import { getImageUrl } from "../../utils/functions";
 
 const places = [
   { name: "Dubai, UAE", img: "destinations/dubai.png" },
@@ -43,7 +44,7 @@ export default function Destinations() {
         >
           <img
             loading="lazy"
-            src={places[0].img}
+            src={getImageUrl(places[0].img) }
             alt={places[0].name}
             className="w-full h-full object-cover transform hover:scale-110 transition duration-500"
           />
@@ -63,7 +64,7 @@ export default function Destinations() {
           >
             <img
               loading="lazy"
-              src={places[1].img}
+              src={getImageUrl(places[1].img)}
               alt={places[1].name}
               className="w-full h-full object-cover transform hover:scale-110 transition duration-500"
             />
@@ -83,7 +84,7 @@ export default function Destinations() {
               >
                 <img
                   loading="lazy"
-                  src={place.img}
+                  src={getImageUrl(place.img)}
                   alt={place.name}
                   className="w-full h-50 object-cover transform hover:scale-110 transition duration-500 rounded-xl"
                 />

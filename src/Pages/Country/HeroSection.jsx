@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import countryData from "../../data/country_data";
 import { apiServices } from "../../services/api";
 import RoutesList from "../../utils/routesList";
+import { getImageUrl } from "../../utils/functions";
 
 const CARD_ICONS = {
   capital: (
@@ -165,7 +166,7 @@ const HeroSectionWithCards = ({ details, landmarks, countryName, onStartPlanning
           {landmarks.map((src, idx) => (
             <img
               key={src}
-              src={`/${src}`}
+              src={getImageUrl(src)}
               alt=""
               loading={idx === 0 ? "eager" : "lazy"}
               className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ease-out"

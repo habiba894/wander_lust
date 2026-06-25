@@ -1,4 +1,5 @@
 import useFavoriteStore from "../../stores/favoriteStore";
+import { getImageUrl } from "../../utils/functions";
 
 const defaultPlaceImage = "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&auto=format&fit=crop&q=80";
 const PopularPlacesSection = ({ places, countryName, loading }) => {
@@ -70,7 +71,7 @@ const PopularPlacesSection = ({ places, countryName, loading }) => {
                 <div className="relative h-64 overflow-hidden">
                   <img
                     loading="lazy"
-                    src={`/${place.image}`}  // ✅ الصورة المحلية مباشرة
+                    src={getImageUrl(place.image)}
                     alt={place.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => handleImageError(place.name, e)}

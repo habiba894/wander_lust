@@ -1,4 +1,4 @@
-// src/components/premium/UpgradeBanner.jsx
+// src/Components/premium/UpgradeBanner.jsx
 import { FaCrown, FaSuitcase, FaComments, FaHeadset, FaBolt } from "react-icons/fa";
 
 const BENEFITS = [

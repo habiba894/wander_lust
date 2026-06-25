@@ -1,4 +1,4 @@
-// src/components/premium/TravelQuestionnaire.jsx
+// src/Components/premium/TravelQuestionnaire.jsx
 import { useState } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { QUESTIONNAIRE } from "../../utils/premiumData";

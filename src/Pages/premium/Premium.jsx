@@ -2,11 +2,11 @@
 import { useState } from "react";
 import { FaCalendarAlt, FaCrown, FaLock, FaMedal } from "react-icons/fa";
 import premiumBg from "../../assets/premium-bg.png";
-import PackingAssistant from "../../components/premium/PackingAssistant";
-import QuestionnaireModal from "../../components/premium/QuestionnaireModal";
-import TravelQuestionnaire from "../../components/premium/TravelQuestionnaire";
-import TripPlanner from "../../components/premium/TripPlanner";
-import UpgradeBanner from "../../components/premium/UpgradeBanner";
+import PackingAssistant from "../../Components/premium/PackingAssistant";
+import QuestionnaireModal from "../../Components/premium/QuestionnaireModal";
+import TravelQuestionnaire from "../../Components/premium/TravelQuestionnaire";
+import TripPlanner from "../../Components/premium/TripPlanner";
+import UpgradeBanner from "../../Components/premium/UpgradeBanner";
 import { useAuth } from "../../context/AuthContext";
 
 const formatMemberSince = (dateStr) => {

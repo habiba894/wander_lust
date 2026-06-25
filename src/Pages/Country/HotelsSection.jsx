@@ -1,4 +1,5 @@
 import useFavoriteStore from "../../stores/favoriteStore";
+import { getImageUrl } from "../../utils/functions";
 
 const defaultHotelImg = "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&auto=format&fit=crop";
 
@@ -62,7 +63,7 @@ const HotelsSection = ({ hotels, countryName, loading }) => {
                 <div className="relative h-64 overflow-hidden">
                   <img
                     loading="lazy"
-                    src={`/${hotel.image}`}
+                    src={getImageUrl(hotel.image)}
                     alt={hotel.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     onError={(e) => { e.target.src = defaultHotelImg; }}

@@ -1,4 +1,4 @@
-// src/components/premium/QuestionnaireModal.jsx
+// src/Components/premium/QuestionnaireModal.jsx
 import { useEffect, useState } from "react";
 import { FaTimes, FaArrowRight, FaChevronLeft, FaLock } from "react-icons/fa";
 import { PiMapTrifold } from "react-icons/pi";
