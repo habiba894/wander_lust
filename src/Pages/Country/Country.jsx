@@ -26,7 +26,6 @@ const CountryPage = () => {
         setLoading(true);
         setError(null);
         const details = await apiServices.getCountryDetails(countryName);
-        console.log(details)
         setCountryHotels([...details.hotels]);
         setCountryPlaces([...details.places]);
         setCountryLandmarks([...details.images]);

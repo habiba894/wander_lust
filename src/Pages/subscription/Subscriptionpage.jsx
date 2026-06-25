@@ -114,7 +114,6 @@ const handlePayment = async (planType, amount) => {
       amount,
     });
 
-    console.log("Payment Session Response:", response);
 
     const paymentUrl = response?.paymentUrl;
 

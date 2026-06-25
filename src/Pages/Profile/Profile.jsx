@@ -93,7 +93,6 @@ export default function ProfilePage() {
     const fetchProfileData = async () => {
       try {
         const trips = await plansService.getUserPlans(user.id);
-        console.log(trips)
         setTripPlans(trips || []);
       } catch (error) {
         console.log("PROFILE ERROR:", error);
@@ -567,7 +566,6 @@ function TripCard({ trip }) {
 // ======================================================
 
 function FavoriteCard({ item, onRemove }) {
-  console.log(item)
   return (
     <a  href={item.link || item.instagram}
                       target="_blank"
