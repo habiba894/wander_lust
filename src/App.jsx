@@ -4,7 +4,7 @@ import { Toaster } from "react-hot-toast";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, HashRouter } from "react-router-dom";
 import AppRoutes from "./utils/routes";
 import { AuthProvider } from "./context/AuthContext";
 
@@ -14,7 +14,7 @@ export default function App() {
   }, []);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AuthProvider>
         <Toaster
           position="top-right"
@@ -47,6 +47,6 @@ export default function App() {
           <AppRoutes />
         </Suspense>
       </AuthProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
