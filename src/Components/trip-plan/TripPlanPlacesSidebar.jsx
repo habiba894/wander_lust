@@ -9,7 +9,7 @@ const categoryConfig = {
 };
 
 function TripPlanPlacesSidebar({ isLoading }) {
-    const { queueAddPlace } = useTripPlanStore();
+    const { queueAddPlace,plan  } = useTripPlanStore();
     const { countryDetails } = useCountryStore();
     const [places, setPlaces] = useState();
     const [activeCategory, setActiveCategory] = useState("restaurants");
@@ -17,6 +17,16 @@ function TripPlanPlacesSidebar({ isLoading }) {
     const currentItems = places?.[activeCategory] || [];
     const config = categoryConfig[activeCategory];
 
+
+const normalizedPlaces = currentItems.filter(
+  (p) =>
+    !plan.places.some(
+    (j) =>
+        p.name === j.name &&
+        (j.tag === "add" || j.tag === "added")
+    )
+);
+console.log(normalizedPlaces)
     useEffect(() => {
         const updatePlaces = () => {
             setPlaces({
@@ -65,8 +75,8 @@ function TripPlanPlacesSidebar({ isLoading }) {
                                 </div>
                             </div>
                         ))
-                    ) : currentItems.length > 0 ? (
-                        currentItems.map((item, index) => (
+                    ) : normalizedPlaces.length > 0 ? (
+                        normalizedPlaces.map((item, index) => (
                             <div
                                 key={item.id ?? index}
                                 className="bg-[#f9fafb] rounded-3xl p-3 flex items-center gap-4 border border-gray-100 hover:border-orange-200 hover:shadow-md transition group"

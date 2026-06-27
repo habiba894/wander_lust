@@ -402,6 +402,7 @@ const apiStringToNotes = (noteString) =>
 const normalizePlace = (place) => ({
   id: place.id,
   name: place.placeName,
+  tag: "added",
   category: place.category.includes("Place")
     ? "place"
     : place.category.toLowerCase(),
@@ -624,15 +625,25 @@ const useTripPlanStore = create((set, get) => ({
   },
 
   queueRemovePlace: (name, category) => {
-    console.log(name, category);
     const { plan } = get();
     if (isPlanLocked(plan.startDate)) return;
+
     set((state) => ({
       plan: {
         ...state.plan,
-        places: state.plan.places.filter(
-          (p) => p.name !== name || p.category !== category,
-        ),
+        places: state.plan.places.reduce((acc, p) => {
+          if (p.name === name && p.category === category) {
+            if (p.tag === "add" || p.tag === "added") {
+              return acc;
+            }
+
+            acc.push({ ...p, tag: "remove" });
+            return acc;
+          }
+
+          acc.push(p);
+          return acc;
+        }, []),
       },
     }));
   },

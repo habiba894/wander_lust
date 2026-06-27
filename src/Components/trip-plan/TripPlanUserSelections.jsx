@@ -3,8 +3,8 @@ import useTripPlanStore from "../../stores/planStore";
 
 const CATEGORY_ICONS = { Hotel: "🏨", Restaurant: "🍽️", "Popular Place": "📍" };
 
-function TripPlanUserSelections({ category, places, locked }) {
-    console.log(places)
+function TripPlanUserSelections({places, category,  locked }) {
+    
     return (
         <div className="animate-fade-in">
             <div className="flex items-start gap-4 mb-6">
@@ -16,8 +16,7 @@ function TripPlanUserSelections({ category, places, locked }) {
                 </div>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 ml-6 border-l-2 border-dashed border-gray-300 pl-10">
-                {console.log(places)}
-                {places.map((place) => (
+                {places.filter((p)=>p.tag ==="add" ||p.tag ==="added").map((place) => (
                     <PlaceCard
                         place={place}
                         locked={locked}
